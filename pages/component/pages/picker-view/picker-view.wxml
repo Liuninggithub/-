@@ -1,0 +1,31 @@
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'progress'}}" />
+
+  <view class="page-body">
+    <view class="page-section page-section-gap">
+
+      <view>
+        <view>{{year}}年{{month}}月{{day}}日</view>
+        <button bindtap="open">open picker</button>
+      </view>
+
+    </view>
+  </view>
+  <view class="picker-model" hidden="{{openPicker}}" bindtap="close">
+    <picker-view  indicator-style="height: 50px;" style="width: 100%; height: 300px; position: absolute; bottom: 0; background-color: #fff;" value="{{value}}" bindchange="bindChange">
+      <picker-view-column>
+        <view wx:for="{{years}}" wx:key="{{years}}" style="line-height: 50px">{{item}}年</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{months}}" wx:key="{{months}}" style="line-height: 50px">{{item}}月</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{days}}" wx:key="{{days}}" style="line-height: 50px">{{item}}日</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+  <template is="foot" />
+</view>
