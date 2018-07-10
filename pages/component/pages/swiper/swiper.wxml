@@ -5,13 +5,15 @@
   <template is="head" data="{{title: 'swiper'}}"/>
 
   <view class="page-body">
-    <view class="page-section page-section-spacing swiper" style="padding: 0;">
+    <view class="page-section page-section-spacing swiper" style="padding: 0 0 0 20rpx;">
       <swiper indicator-dots="{{indicatorDots}}"
-        autoplay="{{autoplay}}" interval="{{interval}}" circular="true" duration="{{duration}}">
+        autoplay="{{autoplay}}" interval="{{interval}}" style='height: 240px; padding-top: 25px;' circular="true" duration="{{duration}}" next-margin="20rpx">
         <block wx:for="{{imgUrls}}" wx:key="*this">
           <swiper-item>
             <!-- <view class="swiper-item {{item}}"></view> -->
-            <image src="{{item}}" class="slide-image" width="355" height="150"/>
+            <!-- width="355" height="150" -->
+            <view>标题</view>
+            <image src="{{item}}" class="slide-image" style='width: 90%; height: 90%; border-radius: 10rpx;'/>
           </swiper-item>
         </block>
       </swiper>
